@@ -8,11 +8,16 @@ require("./db");
 // Handles http requests (express is node js framework)
 // https://www.npmjs.com/package/express
 const express = require("express");
+// ADDED: require mongoose
+const mongoose = require('mongoose');
 
 const app = express();
 
+
 // ℹ️ This function is getting exported from the config folder. It runs most middlewares
 require("./config")(app);
+// use session to be called on the app
+require("./config/session.config")(app);
 
 // default value for title local
 const projectName = "lab-express-basic-auth";

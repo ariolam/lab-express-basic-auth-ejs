@@ -1,0 +1,15 @@
+<div>
+  <h2>Login</h2>
+  <form action="/login" method="POST">
+    <label> Email
+      <input type="text" name="username" placeholder="enter username" required/>
+    </label>
+    <label>Password
+      <input type="password" name="password" placeholder="enter password" required />
+    </label>
+    <button type="submit">Login</button>
+    <% if (typeof errorMessage !== 'undefined') { %>
+    <p style="color: red"><%= errorMessage %></p>
+    <% } %>
+  </form>
+</div>
